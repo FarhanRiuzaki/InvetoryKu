@@ -9,14 +9,15 @@ class MastercvController extends BaseController
 {
 	public function index()
 	{
-		$result = Mastercv::findAll();
+
+		$result = new Mastercv();
 
 		$data = [
-			'title_meta' => view('partials/title-meta', ['title' => 'Stock']),
-			'page_title' => view('partials/page-title', ['title' => 'Stock Barang', 'li_1' => 'Stock Barang', 'li_2' => 'List Stock Barang']),
-			'records' => $result
+			'title_meta' => view('partials/title-meta', ['title' => 'CV']),
+			'page_title' => view('partials/page-title', ['title' => 'Curriculum Vitae', 'li_1' => 'Curriculum Vitae', 'li_2' => 'List Curriculum Vitae']),
+			'records' => $result->findAll()
 		];
 
-		return view('stock/index', $data);
+		return view('cv/index', $data);
 	}
 }

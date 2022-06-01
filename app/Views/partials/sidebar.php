@@ -47,7 +47,7 @@
                 </li>
                 <li class="menu-title mt-2" data-key="t-components">Curriculum Vitae</li>
                 <li>
-                    <a href="<?= base_url(route_to('stock-barang')); ?>">
+                    <a href="<?= base_url(route_to('cv-list')); ?>">
                         <i class="bx bxs-file-pdf"></i>
                         <span data-key="t-stock">CV Management</span>
                     </a>

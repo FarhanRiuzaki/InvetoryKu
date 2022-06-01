@@ -102,11 +102,11 @@ $routes->group('products', function ($routes) {
 
 // Products
 $routes->group('curriculum-vitaes', function ($routes) {
-    $routes->get('', 'Master\Product::index', ['as' => 'cv-list']);
-    $routes->post('add', 'Master\Product::add', ['as' => 'cv-add']);
-    $routes->get('edit/(:any)', 'Master\Product::edit/$1', ['as' => 'cv-edit']);
-    $routes->post('update', 'Master\Product::update', ['as' => 'cv-update']);
-    $routes->get('delete', 'Master\Product::delete', ['as' => 'cv-delete']);
+    $routes->get('', 'MastercvController::index', ['as' => 'cv-list']);
+    $routes->post('add', 'MastercvController::add', ['as' => 'cv-add']);
+    $routes->get('edit/(:any)', 'MastercvController::edit/$1', ['as' => 'cv-edit']);
+    $routes->post('update', 'MastercvController::update', ['as' => 'cv-update']);
+    $routes->get('delete', 'MastercvController::delete', ['as' => 'cv-delete']);
 });
 
 // Routing template nya ya guys
