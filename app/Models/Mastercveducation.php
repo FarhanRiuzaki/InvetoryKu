@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Mastercveducation extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'mastercveducations';
+	protected $table                = 'master_cv_educations';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;

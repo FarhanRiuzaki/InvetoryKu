@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Mastercvexperience extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'mastercvexperiences';
+	protected $table                = 'master_cv_experiences';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;

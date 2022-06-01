@@ -40,6 +40,8 @@ $routes->get('login', 'Login::index', ['as' => 'login']);
 $routes->post('do-login', 'Login::doLogin');
 $routes->get('logout', 'Login::doLogout');
 
+$routes->get('generate-cv/(:any)', 'PdfGenerator::index/$1', ['as' => 'generate-cv']);
+
 // Master 
 $routes->get('book', 'Master/Book::index');
 
