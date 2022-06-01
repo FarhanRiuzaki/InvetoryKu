@@ -83,16 +83,57 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table class="table table-bordered table-striped tableFile">
+                                            <table class="table table-borderless tableFile">
                                                 <thead>
                                                     <tr>
-                                                        <th width='5px'>No</th>
-                                                        <th>Produk</th>
-                                                        <th width='250px'>Qty</th>
-                                                        <th width='50px'><button class="btn btn-sm btn-success addFile" type="button"><i class="bx bx-plus"></i></button></th>
+                                                        <td>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="basicpill-email-input" class="form-label">Company Name</label>
+                                                                        <input type="email" name="email" class="form-control" placeholder="email" id="basicpill-email-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="basicpill-email-input" class="form-label">Job Title</label>
+                                                                        <input type="email" name="email" class="form-control" placeholder="email" id="basicpill-email-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="example-date-input" class="form-label">Start Date</label>
+                                                                        <input class="form-control" name="date" type="date" value="<?= date('Y-m-d') ?>" id="example-date-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="example-date-input" class="form-label">End Date</label>
+                                                                        <input class="form-control" name="date" type="date" value="<?= date('Y-m-d') ?>" id="example-date-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="basicpill-address-input" class="form-label">Description</label>
+                                                                        <textarea id="basicpill-address-input" name="address" class="form-control" rows="4"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td style="padding-top: 0px !important;" align="right">
+                                                            <div class="row">
+                                                                <div class="col-md-2 offset-10">
+                                                                    <button class="btn btn-sm btn-success addFile" type="button" style="width: 100% !important;"><i class="bx bx-plus"></i> Add New Education</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>
@@ -120,19 +161,12 @@
     no = 0;
     $('body').on('click', '.addFile', function() {
         no++;
-
         html = '<tr>' +
-            "<td class='number text-center'>" +
-            no +
-            "</td>" +
-            "<td>ok" +
-            "</td>" +
             "<td>" +
-            "<input type='number' data-name='qty' name='stock_details[" + no + "][qty]' class='form-control' required>" +
+            '<div class="row"><div class="col-lg-6"><div class="mb-3"><label for="basicpill-email-input" class="form-label">Company Name</label><input type="email" name="email" class="form-control" placeholder="email" id="basicpill-email-input"></div></div><div class="col-lg-6"><div class="mb-3"><label for="basicpill-email-input" class="form-label">Job Title</label><input type="email" name="email" class="form-control" placeholder="email" id="basicpill-email-input"></div></div><div class="col-md-6"><div class="mb-3"><label for="example-date-input" class="form-label">Start Date</label><input class="form-control" name="date" type="date" id="example-date-input"></div></div><div class="col-md-6"><div class="mb-3"><label for="example-date-input" class="form-label">End Date</label><input class="form-control" name="date" type="date" id="example-date-input"></div></div><div class="col-lg-12"><div class="mb-3"><label for="basicpill-address-input" class="form-label">Description</label><textarea id="basicpill-address-input" name="address" class="form-control" rows="4"></textarea></div></div><div class="col-md-10"><hr></div><div class="col-md-2"><button type="button" class="btn btn-danger btn-sm dellFile" style="width: 100% !important"><span class="fas fa-times"></span> delete record</button></div></div>' +
             "</td>" +
-            "<td class='text-center'>" +
-            '<button type="button" class="btn btn-danger btn-sm dellFile"><span class="fas fa-times"></span></button>' +
-            "</td>";
+            "</tr>";
+        console.log(html);
         $('.tableFile tbody').append(html);
     });
 
