@@ -1,0 +1,35 @@
+CRITICAL - 2022-04-08 02:23:32 --> Trying to access array offset on value of type null
+#0 D:\DEVELOPMENT\KULIAH\investory\app\Views\master\product\edit.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\DEVELOPMENT\\...', 18, Array)
+#1 D:\DEVELOPMENT\KULIAH\investory\system\View\View.php(220): include('D:\\DEVELOPMENT\\...')
+#2 D:\DEVELOPMENT\KULIAH\investory\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\DEVELOPMENT\KULIAH\investory\system\Common.php(1217): CodeIgniter\View\View->render('master/product/...', Array, true)
+#4 D:\DEVELOPMENT\KULIAH\investory\app\Controllers\Master\Product.php(61): view('master/product/...', Array)
+#5 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(936): App\Controllers\Master\Product->edit('8')
+#6 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Product))
+#7 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\DEVELOPMENT\KULIAH\investory\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#9 D:\DEVELOPMENT\KULIAH\investory\system\Commands\Server\rewrite.php(45): require_once('D:\\DEVELOPMENT\\...')
+#10 {main}
+CRITICAL - 2022-04-08 02:32:47 --> Trying to access array offset on value of type null
+#0 D:\DEVELOPMENT\KULIAH\investory\app\Views\transaction\stock_out\view.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\DEVELOPMENT\\...', 34, Array)
+#1 D:\DEVELOPMENT\KULIAH\investory\system\View\View.php(220): include('D:\\DEVELOPMENT\\...')
+#2 D:\DEVELOPMENT\KULIAH\investory\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\DEVELOPMENT\KULIAH\investory\system\Common.php(1217): CodeIgniter\View\View->render('transaction/sto...', Array, true)
+#4 D:\DEVELOPMENT\KULIAH\investory\app\Controllers\Transaction\Stockout.php(82): view('transaction/sto...', Array)
+#5 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(936): App\Controllers\Transaction\Stockout->view('tables-datatabl...')
+#6 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaction\Stockout))
+#7 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\DEVELOPMENT\KULIAH\investory\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#9 D:\DEVELOPMENT\KULIAH\investory\system\Commands\Server\rewrite.php(45): require_once('D:\\DEVELOPMENT\\...')
+#10 {main}
+CRITICAL - 2022-04-08 02:52:31 --> Cannot use object of type stdClass as array
+#0 D:\DEVELOPMENT\KULIAH\investory\system\View\View.php(220): include()
+#1 D:\DEVELOPMENT\KULIAH\investory\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\DEVELOPMENT\KULIAH\investory\system\Common.php(1217): CodeIgniter\View\View->render('stock/index', Array, true)
+#3 D:\DEVELOPMENT\KULIAH\investory\app\Controllers\StockController.php(61): view('stock/index', Array)
+#4 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(936): App\Controllers\StockController->index()
+#5 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StockController))
+#6 D:\DEVELOPMENT\KULIAH\investory\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\DEVELOPMENT\KULIAH\investory\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#8 D:\DEVELOPMENT\KULIAH\investory\system\Commands\Server\rewrite.php(45): require_once('D:\\DEVELOPMENT\\...')
+#9 {main}
