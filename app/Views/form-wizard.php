@@ -395,66 +395,6 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="tab-pane" id="progress-bank-detail">
-                                            <div>
-                                                <div class="text-center mb-4">
-                                                    <h5>Bank Details</h5>
-                                                    <p class="card-title-desc">Fill all information below</p>
-                                                </div>
-                                                <form>
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="mb-3">
-                                                                <label for="progresspill-namecard-input" class="form-label">Name on Card</label>
-                                                                <input type="text" class="form-control" id="progresspill-namecard-input">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6">
-                                                            <div class="mb-3">
-                                                                <label class="form-label">Credit Card Type</label>
-                                                                <select class="form-select">
-                                                                    <option selected>Select Card Type</option>
-                                                                    <option value="AE">American Express</option>
-                                                                    <option value="VI">Visa</option>
-                                                                    <option value="MC">MasterCard</option>
-                                                                    <option value="DI">Discover</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="mb-3">
-                                                                <label for="progresspill-cardno-input" class="form-label">Credit Card Number</label>
-                                                                <input type="text" class="form-control" id="progresspill-cardno-input">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6">
-                                                            <div class="mb-3">
-                                                                <label for="progresspill-card-verification-input" class="form-label">Card Verification Number</label>
-                                                                <input type="text" class="form-control" id="progresspill-card-verification-input">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="mb-3">
-                                                                <label for="progresspill-expiration-input" class="form-label">Expiration Date</label>
-                                                                <input type="text" class="form-control" id="progresspill-expiration-input">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </form>
-                                                <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                    <li class="previous"><a href="javascript: void(0);" class="btn btn-primary" onclick="nextTab()"><i class="bx bx-chevron-left me-1"></i> Previous</a></li>
-                                                    <li class="float-end"><a href="javascript: void(0);" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".confirmModal">Save
-                                                            Changes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
