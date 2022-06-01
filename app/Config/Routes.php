@@ -103,7 +103,8 @@ $routes->group('products', function ($routes) {
 // Products
 $routes->group('curriculum-vitaes', function ($routes) {
     $routes->get('', 'MastercvController::index', ['as' => 'cv-list']);
-    $routes->post('add', 'MastercvController::add', ['as' => 'cv-add']);
+    $routes->get('add', 'MastercvController::add', ['as' => 'cv-add']);
+    $routes->post('store', 'MastercvController::store', ['as' => 'cv-store']);
     $routes->get('edit/(:any)', 'MastercvController::edit/$1', ['as' => 'cv-edit']);
     $routes->post('update', 'MastercvController::update', ['as' => 'cv-update']);
     $routes->get('delete', 'MastercvController::delete', ['as' => 'cv-delete']);

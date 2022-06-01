@@ -20,4 +20,15 @@ class MastercvController extends BaseController
 
 		return view('cv/index', $data);
 	}
+
+
+	public function add()
+	{
+		$data = [
+			'title_meta' => view('partials/title-meta', ['title' => 'CV']),
+			'page_title' => view('partials/page-title', ['title' => 'Curriculum Vitae', 'li_1' => 'Curriculum Vitae', 'li_2' => 'Add Curriculum Vitae']),
+		];
+
+		return view('cv/add', $data);
+	}
 }
