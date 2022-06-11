@@ -34,7 +34,7 @@
                                         <th scope="th">Name</th>
                                         <th scope="th">Job Title</th>
                                         <?php if (session()->get('role') == 'Admin') { ?>
-                                            <th scope="th" width="100px">Action</th>
+                                            <th scope="th" width="150px">Action</th>
                                         <?php } ?>
                                     </tr>
                                 </thead>
@@ -49,6 +49,9 @@
 
                                             <?php if (session()->get('role') == 'Admin') { ?>
                                                 <td class="text-center">
+                                                    <a href="<?= base_url(route_to('cv-pdf', $val['id'])) ?>" class="btn btn-success btn-sm" target="_BLANK">
+                                                        <i class="bx bxs-file-pdf"></i>
+                                                    </a>
                                                     <a href="<?= base_url(route_to('cv-edit', $val['id'])) ?>" class="btn btn-warning btn-sm">
                                                         <i class="bx bx-pencil"></i>
                                                     </a>
@@ -89,7 +92,7 @@
                 confirmButtonText: "Yes, delete it!"
             }).then(function(result) {
                 if (result.value) {
-                    window.location.href = '<?= base_url(route_to('category-delete')) ?>' + '?id=' + id
+                    window.location.href = '<?= base_url(route_to('cv-delete')) ?>' + '?id=' + id
                 }
             });
         }

@@ -12,3 +12,5 @@
 <script src="<?= base_url('assets/js/pages/table-responsive.init.js') ?>"></script>
 
 <script src="<?= base_url('assets/js/app.js') ?>"></script>
+
+<script src="<?= base_url('ckeditor5/ckeditor.js') ?>"></script>

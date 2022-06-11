@@ -105,8 +105,7 @@ $routes->group('curriculum-vitaes', function ($routes) {
     $routes->get('', 'MastercvController::index', ['as' => 'cv-list']);
     $routes->get('add', 'MastercvController::add', ['as' => 'cv-add']);
     $routes->post('store', 'MastercvController::store', ['as' => 'cv-store']);
-    $routes->get('edit/(:any)', 'MastercvController::edit/$1', ['as' => 'cv-edit']);
-    $routes->post('update', 'MastercvController::update', ['as' => 'cv-update']);
+    $routes->get('pdf/(:any)', 'MastercvController::pdf/$1', ['as' => 'cv-pdf']);
     $routes->get('delete', 'MastercvController::delete', ['as' => 'cv-delete']);
 });
 

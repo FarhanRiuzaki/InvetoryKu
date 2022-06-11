@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Database\Migrations\Mastercvskills;
 use CodeIgniter\Model;
 
 class Mastercv extends Model
@@ -23,4 +24,19 @@ class Mastercv extends Model
 		'address',
 		'photo',
 	];
+
+	public function cv_educations()
+	{
+		return $this->hasMany(new Mastercveducation());
+	}
+
+	public function cv_experiences()
+	{
+		return $this->hasMany(new Mastercvexperience());
+	}
+
+	public function cv_skills()
+	{
+		return $this->hasMany(new Mastercvskills());
+	}
 }
