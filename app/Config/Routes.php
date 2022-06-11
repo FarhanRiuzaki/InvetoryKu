@@ -105,8 +105,11 @@ $routes->group('curriculum-vitaes', function ($routes) {
     $routes->get('', 'MastercvController::index', ['as' => 'cv-list']);
     $routes->get('add', 'MastercvController::add', ['as' => 'cv-add']);
     $routes->post('store', 'MastercvController::store', ['as' => 'cv-store']);
-    $routes->get('pdf/(:any)', 'MastercvController::pdf/$1', ['as' => 'cv-pdf']);
+    $routes->get('dom-pdf/(:any)', 'MastercvController::domPdf/$1', ['as' => 'cv-dom-pdf']);
+    $routes->get('pdf/(:any)', 'MastercvController::Pdf/$1', ['as' => 'cv-pdf']);
     $routes->get('delete', 'MastercvController::delete', ['as' => 'cv-delete']);
+    $routes->get('edit/(:any)', 'MastercvController::edit/$1', ['as' => 'cv-edit']);
+    $routes->post('update/', 'MastercvController::update', ['as' => 'cv-update']);
 });
 
 // Routing template nya ya guys

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '15a19e6b33b919912f22c50423aad2fc38f751c9',
+        'reference' => '576586cabba857a5498d5f4a91032b1199c03ae7',
         'name' => 'codeigniter4/framework',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '15a19e6b33b919912f22c50423aad2fc38f751c9',
+            'reference' => '576586cabba857a5498d5f4a91032b1199c03ae7',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(

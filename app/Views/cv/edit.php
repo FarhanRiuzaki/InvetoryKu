@@ -14,7 +14,8 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- header  -->
-                        <form action="<?= base_url(route_to('cv-store')) ?>" method="post" id="MyForm" enctype="multipart/form-data">
+                        <form action="<?= base_url(route_to('cv-update')) ?>" method="post" id="MyForm" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?= $record['id'] ?>">
                             <div class="d-flex flex-wrap align-items-center mb-4">
                                 <h4 class="me-2"><b>New Record</b></h4>
 
@@ -73,43 +74,37 @@
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label for="basicpill-firstname-input" class="form-label">Full Name</label>
-                                                        <input type="text" name="name" class="form-control" required placeholder="e.g. Farhan" id="basicpill-firstname-input">
+                                                        <input type="text" name="name" value="<?= $record['name'] ?>" class="form-control" required placeholder="e.g. Farhan" id="basicpill-firstname-input">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label for="basicpill-lastname-input" class="form-label">Profession</label>
-                                                        <input type="text" name="title" class="form-control" required placeholder="e.g. Software Developer" id="basicpill-lastname-input">
+                                                        <input type="text" name="title" value="<?= $record['title'] ?>" class="form-control" required placeholder="e.g. Software Developer" id="basicpill-lastname-input">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label for="basicpill-phoneno-input" class="form-label">Phone</label>
-                                                        <input type="text" name="phone" class="form-control" required placeholder="e.g. +6282208220524" id="basicpill-phoneno-input">
+                                                        <input type="text" name="phone" value="<?= $record['phone'] ?>" class="form-control" required placeholder="e.g. +6282208220524" id="basicpill-phoneno-input">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label for="basicpill-email-input" class="form-label">Email</label>
-                                                        <input type="email" name="email" class="form-control" required placeholder="e.g. farhan@mail.com" id="basicpill-email-input">
+                                                        <input type="email" name="email" value="<?= $record['email'] ?>" class="form-control" required placeholder="e.g. farhan@mail.com" id="basicpill-email-input">
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-email-input" class="form-label">Avatar</label>
-                                                        <input type="file" name="photo" class="form-control" required placeholder="email" id="basicpill-email-input">
-                                                    </div>
-                                                </div> -->
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="basicpill-address-input" class="form-label">Address</label>
-                                                        <textarea id="basicpill-address-input" name="address" placeholder="Jakarta, IND" required class="form-control" rows="3"></textarea>
+                                                        <textarea id="basicpill-address-input" name="address" placeholder="Jakarta, IND" required class="form-control" rows="3"><?= $record['address'] ?></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="basicpill-address-input" class="form-label">About Me</label>
-                                                        <textarea id="basicpill-address-input" name="description" placeholder="describe yourself and experience" required class="form-control" rows="5"></textarea>
+                                                        <textarea id="basicpill-address-input" name="description" placeholder="describe yourself and experience" required class="form-control" rows="5"><?= $record['description'] ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,7 +119,35 @@
                                                 <p class="card-title-desc">Include every school, even if you're still there or didn't graduate.</p>
                                             </div>
                                             <table class="table table-borderless tableEducation">
-                                                <tbody></tbody>
+                                                <tbody>
+                                                    <?php
+                                                    $noEducation = 0;
+                                                    foreach ($education as $key => $value) :
+                                                        $noEducation++; ?>
+                                                        <tr>
+                                                            <td style='padding: 0px;'>
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="mb-3"><label for="basicpill-email-input" class="form-label">School Name</label><input type="text" data-name="name" name="master_cv_educations[<?= $noEducation ?>][name]" value="<?= $value['name'] ?>" class="form-control" placeholder="e.g. Universitas Mercubuana" id="basicpill-email-input"></div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="mb-3"><label for="basicpill-email-input" class="form-label"> Field of Study</label><input type="text" data-name="title" name="master_cv_educations[<?= $noEducation ?>][title]" value="<?= $value['title'] ?>" class="form-control" placeholder="e.g. Information Technology" id="basicpill-email-input"></div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="mb-3"><label for="example-date-input" class="form-label">Start Date</label><input class="form-control" data-name="start_date" name="master_cv_educations[<?= $noEducation ?>][start_date]" value="<?= $value['start_date'] ?>" type="date" value="2022-06-11" id="example-date-input"></div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="mb-3"><label for="example-date-input" class="form-label">End Date</label><input class="form-control" data-name="end_date" name="master_cv_educations[<?= $noEducation ?>][end_date]" value="<?= $value['end_date'] ?>" type="date" value="2022-06-11" id="example-date-input"></div>
+                                                                    </div>
+                                                                    <div class="col-md-10">
+                                                                        <hr>
+                                                                    </div>
+                                                                    <div class="col-md-2"><button type="button" class="btn btn-danger btn-sm  dellEducation" style="float: right;"><span class=" bx bx-trash-alt"></span></button></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
                                                 <tfoot>
                                                     <tr>
                                                         <td style="padding: 0px !important; padding-top: 15px !important;" align="right">
@@ -156,7 +179,18 @@
                                                         <th width='50px'><button class="btn btn-sm btn-success addSkill" type="button"><i class="bx bx-plus"></i></button></th>
                                                     </tr>
                                                 </thead>
-                                                <tbody></tbody>
+                                                <tbody>
+                                                    <?php
+                                                    $noSkill = 0;
+                                                    foreach ($skill as $key => $value) :
+                                                        $noSkill++; ?>
+                                                        <tr>
+                                                            <td class='number text-center'><?= $noSkill ?></td>
+                                                            <td><input type='text' data-name='name' placeholder='Ex: Cashier' name='master_cv_skills[<?= $noSkill ?>][name]' value="<?= $value['name'] ?>" class='form-control' required></td>
+                                                            <td class='text-center'><button type="button" class="btn btn-danger btn-sm dellSkill"><span class=" bx bx-trash-alt"></span></button></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
                                             </table>
                                             <ul class="pager wizard twitter-bs-wizard-pager-link">
                                                 <li class="previous"><a href="javascript: void(0);" class="btn btn-primary" onclick="nextTab()"><i class="bx bx-chevron-left me-1"></i> Previous</a></li>
@@ -171,7 +205,38 @@
                                                 <p class="card-title-desc">We’ll start there and work backward.</p>
                                             </div>
                                             <table class="table table-borderless tableFile">
-                                                <tbody></tbody>
+                                                <tbody>
+                                                    <?php
+                                                    $noExperience = 0;
+                                                    foreach ($experience as $key => $value) :
+                                                        $noExperience++; ?>
+                                                        <tr>
+                                                            <td style='padding: 0px;'>
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="mb-3"><label for="basicpill-email-input" class="form-label">Company Name</label><input type="text" name="master_cv_experiences[<?= $noExperience ?>][company_name]" value="<?= $value['company_name'] ?>" data-name="company_name" class="form-control" placeholder="Company Name" id="basicpill-email-input"></div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="mb-3"><label for="basicpill-email-input" class="form-label">Job Title</label><input type="text" name="master_cv_experiences[<?= $noExperience ?>][title]" value="<?= $value['title'] ?>" data-name="title" class="form-control" placeholder="Job Title" id="basicpill-email-input"></div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="mb-3"><label for="example-date-input" class="form-label">Start Date</label><input class="form-control" name="master_cv_experiences[<?= $noExperience ?>][start_date]" value="<?= $value['start_date'] ?>" data-name="start_date" type="date" value="2022-06-11" id="example-date-input"></div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="mb-3"><label for="example-date-input" class="form-label">End Date</label><input class="form-control" name="master_cv_experiences[<?= $noExperience ?>][end_date]" value="<?= $value['end_date'] ?>" data-name="end_date" type="date" value="2022-06-11" id="example-date-input"></div>
+                                                                    </div>
+                                                                    <div class="col-lg-12">
+                                                                        <div class="mb-3"><label for="basicpill-address-input" class="form-label">Description</label><textarea id="editor<?= $noExperience ?>" name="master_cv_experiences[<?= $noExperience ?>][description]" data-name=" description" class="form-control" rows="2"><?= $value['description'] ?></textarea></div>
+                                                                    </div>
+                                                                    <div class="col-md-10">
+                                                                        <hr>
+                                                                    </div>
+                                                                    <div class="col-md-2"><button type="button" class="btn btn-danger btn-sm dellFile" style="float: right;"><span class=" bx bx-trash-alt"></span></button></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
                                                 <tfoot>
                                                     <tr>
                                                         <td style="padding: 0px !important; padding-top: 15px !important;" align="right">
@@ -236,7 +301,23 @@
 <script src="<?= base_url('assets/js/pages/form-wizard.init.js') ?>"></script>
 
 <script>
-    no = noEducation = noSkill = 0;
+    no = <?= $noExperience ?>;
+    noEducation = <?= $noEducation ?>;
+    noSkill = <?= $noSkill ?>;
+
+    for (let index = 1; index <= no; index++) {
+        // console.log(index);
+        ClassicEditor
+            .create(document.querySelector('#editor' + index), {
+                placeholder: 'Type your achievments and responsibilities here.'
+            })
+            .then(function(editor) {
+                editor.ui.view.editable.element.style.height = '100px';
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+    }
     $('body').on('click', '.addFile', function() {
         no++;
         html = '<tr>' +
@@ -244,6 +325,7 @@
             '<div class="row"><div class="col-lg-6"><div class="mb-3"><label for="basicpill-email-input" class="form-label">Company Name</label><input type="text" name="master_cv_experiences[' + no + '][company_name]" data-name="company_name" class="form-control" placeholder="Company Name" id="basicpill-email-input"></div></div><div class="col-lg-6"><div class="mb-3"><label for="basicpill-email-input" class="form-label">Job Title</label><input type="text" name="master_cv_experiences[' + no + '][title]" data-name="title" class="form-control" placeholder="Job Title" id="basicpill-email-input"></div></div><div class="col-md-6"><div class="mb-3"><label for="example-date-input" class="form-label">Start Date</label><input class="form-control" name="master_cv_experiences[' + no + '][start_date]" data-name="start_date" type="date" value="<?= date('Y-m-d') ?>" id="example-date-input"></div></div><div class="col-md-6"><div class="mb-3"><label for="example-date-input" class="form-label">End Date</label><input class="form-control" name="master_cv_experiences[' + no + '][end_date]" data-name="end_date" type="date" value="<?= date('Y-m-d') ?>" id="example-date-input"></div></div><div class="col-lg-12"><div class="mb-3"><label for="basicpill-address-input" class="form-label">Description</label><textarea id="editor' + no + '" name="master_cv_experiences[' + no + '][description]" data-name="description" class="form-control" rows="2"></textarea></div></div><div class="col-md-10"><hr></div><div class="col-md-2"><button type="button" class="btn btn-danger btn-sm dellFile" style="float: right;"><span class=" bx bx-trash-alt"></span></button></div></div>' +
             "</td>" +
             "</tr>";
+        // console.log(html);
         $('.tableFile tbody').append(html);
 
         ClassicEditor
@@ -295,7 +377,6 @@
         $.each($(".tableFile tbody tr:not(.tr-input)"), function(e, item) {
             //ganti nomor per TR
             var no = e * 1 + 1;
-
             //NEANGAN INPUTAN PER TR
             $.each($(this).find("input"), function(s, f) {
                 var dataName = $(this).data("name");
